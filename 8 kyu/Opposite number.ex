@@ -1,17 +1,16 @@
 # -----------------------------------------------------------
-# Write a function that returns a string in which firstname is swapped with last name.
+# Very simple, given an integer or a floating-point number, find its opposite.
 # 
-# Example(Input --> Output)
+# Examples:
 # 
-# "john McClane" --> "McClane john"
+# 1: -1
+# 14: -14
+# -34: 34
 # -----------------------------------------------------------
 
-defmodule Messy do
-  def name_shuffler(name) do
-    name
-    |> String.split(" ")
-    |> Enum.reverse()
-    |> Enum.join(" ")
+defmodule Opposite do
+  def opposite(number) do
+    0 - number
   end
 end
 

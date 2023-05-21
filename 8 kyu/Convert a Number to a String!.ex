@@ -1,17 +1,17 @@
 # -----------------------------------------------------------
-# Write a function that returns a string in which firstname is swapped with last name.
+# We need a function that can transform a number (integer) into a string.
 # 
-# Example(Input --> Output)
+# What ways of achieving this do you know?
 # 
-# "john McClane" --> "McClane john"
+# Examples (input --> output):
+# 123  --> "123"
+# 999  --> "999"
+# -100 --> "-100"
 # -----------------------------------------------------------
 
-defmodule Messy do
-  def name_shuffler(name) do
-    name
-    |> String.split(" ")
-    |> Enum.reverse()
-    |> Enum.join(" ")
+defmodule Stringify do
+  def number_to_string(n) do
+    to_string(n)
   end
 end
 

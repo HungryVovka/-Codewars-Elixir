@@ -1,17 +1,10 @@
 # -----------------------------------------------------------
-# Write a function that returns a string in which firstname is swapped with last name.
-# 
-# Example(Input --> Output)
-# 
-# "john McClane" --> "McClane john"
+# This code does not execute properly. Try to figure out why.
 # -----------------------------------------------------------
 
-defmodule Messy do
-  def name_shuffler(name) do
-    name
-    |> String.split(" ")
-    |> Enum.reverse()
-    |> Enum.join(" ")
+defmodule Multiply do
+  def multiply(a, b) do
+    a * b
   end
 end
 

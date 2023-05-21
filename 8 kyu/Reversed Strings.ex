@@ -1,17 +1,14 @@
 # -----------------------------------------------------------
-# Write a function that returns a string in which firstname is swapped with last name.
+# Complete the solution so that it reverses the string passed into it.
 # 
-# Example(Input --> Output)
-# 
-# "john McClane" --> "McClane john"
+# 'world'  =>  'dlrow'
+# 'word'   =>  'drow'
 # -----------------------------------------------------------
 
-defmodule Messy do
-  def name_shuffler(name) do
-    name
-    |> String.split(" ")
-    |> Enum.reverse()
-    |> Enum.join(" ")
+defmodule Solution do
+  def reverse(string) do
+    arr = String.to_charlist(string)
+    Enum.reverse(arr) |> List.to_string()
   end
 end
 
