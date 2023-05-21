@@ -30,7 +30,7 @@ is the personal property of Vladimir Rukavishnikov
 
 Copyright (C) 2023 Vladimir Rukavishnikov
 
-This file is part of the HungryVovka/Codewars-Python
+This file is part of the HungryVovka/Codewars-Elixir
 (https://github.com/HungryVovka/Codewars-Elixir)
 
 License is GNU General Public License v3.0
