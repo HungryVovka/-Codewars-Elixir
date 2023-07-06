@@ -1,0 +1,50 @@
+# -----------------------------------------------------------
+# Hey awesome programmer!
+# 
+# You've got much data to manage and of course you use zero-based and non-negative ID's to make each data item unique!
+# 
+# Therefore you need a method, which returns the smallest unused ID for your next new data item...
+# 
+# Note: The given array of used IDs may be unsorted. For test reasons there may be duplicate IDs, but you don't have to find or remove them!
+# 
+# Go on and code some pure awesomeness!
+# -----------------------------------------------------------
+
+defmodule Order do
+  def next_id(ids) do
+    Enum.find(0..Enum.max(ids), 
+      Enum.max(ids) + 1, 
+      fn(i) -> i not in ids
+    end)
+  end
+end
+
+# or
+
+defmodule Order do
+  def next_id(ids) do
+    Stream.iterate(0, fn(i) -> i + 1 end)
+    |> Enum.find(fn(j) -> not j in ids end)
+  end
+end
+
+# -----------------------------------------------------------
+# License
+# Tasks are the property of Codewars (https://www.codewars.com/) 
+# and users of this resource.
+# 
+# All solution code in this repository 
+# is the personal property of Vladimir Rukavishnikov
+# (vladimirrukavishnikovmail@gmail.com).
+# 
+# Copyright (C) 2023 Vladimir Rukavishnikov
+# 
+# This file is part of the HungryVovka/Codewars-Elixir
+# (https://github.com/HungryVovka/Codewars-Elixir)
+# 
+# License is GNU General Public License v3.0
+# (https://github.com/HungryVovka/Codewars-Elixir/blob/main/LICENSE.md)
+# 
+# You should have received a copy of the GNU General Public License v3.0
+# along with this code. If not, see http://www.gnu.org/licenses/
+# -----------------------------------------------------------
