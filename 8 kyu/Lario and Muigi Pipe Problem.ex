@@ -1,16 +1,25 @@
 # -----------------------------------------------------------
-# Write a simple regex to validate a username. Allowed characters are:
+# Issue
+# Looks like some hoodlum plumber and his brother has been running around and damaging your stages again.
 # 
-# lowercase letters,
-# numbers,
-# underscore
+# The pipes connecting your level's stages together need to be fixed before you receive any more complaints.
 # 
-# Length should be between 4 and 16 characters (both included).
+# Pipes list is correct when each pipe after the first index is greater (+1) than the previous one, and that there is no duplicates.
+# 
+# Task
+# Given the a list of numbers, return a fixed list so that the values increment by 1 for each index from the minimum value up to the maximum value 
+# (both included).
+# 
+# Example
+# Input:  1,3,5,6,7,8 Output: 1,2,3,4,5,6,7,8
 # -----------------------------------------------------------
 
-defmodule UserValidator do
-  def valid?(username) do
-    Regex.match?(~r/\A[a-z0-9_]{4,16}\z/, username)
+defmodule Pipeline do
+  def fix_pipe(pipes) do
+    maxpipe = Enum.max(pipes)
+    minpipe = Enum.min(pipes)
+    minpipe..maxpipe
+    |> Enum.to_list()
   end
 end
 

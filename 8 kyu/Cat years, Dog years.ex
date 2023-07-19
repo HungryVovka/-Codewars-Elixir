@@ -1,16 +1,39 @@
 # -----------------------------------------------------------
-# Write a simple regex to validate a username. Allowed characters are:
+# Kata Task
+# I have a cat and a dog.
 # 
-# lowercase letters,
-# numbers,
-# underscore
+# I got them at the same time as kitten/puppy. That was humanYears years ago.
 # 
-# Length should be between 4 and 16 characters (both included).
+# Return their respective ages now as [humanYears,catYears,dogYears]
+# 
+# NOTES:
+# 
+# humanYears >= 1
+# humanYears are whole numbers only
+# 
+# Cat Years
+# 15 cat years for first year
+# +9 cat years for second year
+# +4 cat years for each year after that
+# 
+# Dog Years
+# 15 dog years for first year
+# +9 dog years for second year
+# +5 dog years for each year after that
 # -----------------------------------------------------------
 
-defmodule UserValidator do
-  def valid?(username) do
-    Regex.match?(~r/\A[a-z0-9_]{4,16}\z/, username)
+defmodule Dinglemouse do
+  def human_years_cat_years_dog_years(0) do
+    {0, 0, 0}
+  end
+  def human_years_cat_years_dog_years(1) do
+    {1, 15, 15}
+  end
+  def human_years_cat_years_dog_years(2) do
+    {2, 15 + 9, 15 + 9}
+  end
+  def human_years_cat_years_dog_years(human_years) do
+    {human_years, (15 + 9) + (human_years - 2) * 4, (15 + 9) + (human_years - 2) * 5}
   end
 end
 

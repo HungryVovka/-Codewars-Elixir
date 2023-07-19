@@ -1,16 +1,12 @@
 # -----------------------------------------------------------
-# Write a simple regex to validate a username. Allowed characters are:
+# Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
 # 
-# lowercase letters,
-# numbers,
-# underscore
-# 
-# Length should be between 4 and 16 characters (both included).
+# Return your answer as a number.
 # -----------------------------------------------------------
 
-defmodule UserValidator do
-  def valid?(username) do
-    Regex.match?(~r/\A[a-z0-9_]{4,16}\z/, username)
+defmodule SumMix do
+  def sumMin(list) do
+    Enum.reduce(list, 0, fn(i, j) -> j + String.to_integer(to_string(i)) end)
   end
 end
 

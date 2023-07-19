@@ -1,16 +1,21 @@
 # -----------------------------------------------------------
-# Write a simple regex to validate a username. Allowed characters are:
+# What if we need the length of the words separated by a space to be added at the end of that same word and have it returned as an array?
 # 
-# lowercase letters,
-# numbers,
-# underscore
+# Example(Input --> Output)
 # 
-# Length should be between 4 and 16 characters (both included).
+# "apple ban" --> ["apple 5", "ban 3"]
+# "you will win" -->["you 3", "will 4", "win 3"]
+# 
+# Your task is to write a function that takes a String and returns an Array/list with the length of each word added to each element .
+# 
+# Note: String will have at least one element; words will always be separated by a space.
 # -----------------------------------------------------------
 
-defmodule UserValidator do
-  def valid?(username) do
-    Regex.match?(~r/\A[a-z0-9_]{4,16}\z/, username)
+defmodule Marker do
+  def add_length(str) do
+    str
+    |> String.split(" ")
+    |> Enum.map(fn i -> "#{i} #{String.length(i)}" end)
   end
 end
 
